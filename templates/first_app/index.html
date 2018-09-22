@@ -1,15 +1,17 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>First App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'stylesheets/style.css' %}" />
     <script src="main.js"></script>
 </head>
 <body>
     <h1>Game of Thrones</h1>
     {{insert_me}}
+    <img style="width: 100%" src="{% static 'images/hands.jpg' %}" alt="">
 </body>
 </html>
