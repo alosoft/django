@@ -4,14 +4,33 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>First App</title>
+    <title>Alosoft | Home</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'stylesheets/style.css' %}" />
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Game of Thrones</h1>
-    {{insert_me}}
-    <img style="width: 100%" src="{% static 'images/hands.jpg' %}" alt="">
+    <h1>Hi welcome to Alosoft Incorpotation</h1>
+    <h3>Here are you're access records:</h3>
+
+    <div class="djangotwo">
+        {% if access_records %}
+            <table>
+                <thead>
+                    <th>Site Name</th>
+                    <th>Date Accessed</th>
+                </thead>
+                {% for acc in access_records %}
+                    <tr>
+                        <td>{{ acc.name }}</td>
+                        <td>{{ acc.date }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>NO ACCESS RECORDS FOUND</p>
+        {% endif %}
+    </div>
+
 </body>
 </html>
